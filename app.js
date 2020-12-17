@@ -3,7 +3,8 @@ var exphbs  = require('express-handlebars');
 var port = process.env.PORT || 3000
 var bodyParser = require('body-parser');
 var mercadopago = require('mercadopago');
-var host = 'https://store-e-commerce.herokuapp.com/';
+//var host = 'https://store-e-commerce.herokuapp.com/';
+const host = 'http://localhost:3000/';
 var url = host + 'callback?status=';
 
 mercadopago.configure({
@@ -107,7 +108,7 @@ app.post('/buy', function (req, res) {
     mercadopago.preferences.create(preference)
         .then(response => {
             global.init_point = response.body.init_point;
-            res.render('confirm');
+            res.render('confirm',{init_point : init_point});
         }).catch(error => {
             console.log(error);
             res.send('error');
