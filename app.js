@@ -107,7 +107,7 @@ app.post('/buy', function (req, res) {
     mercadopago.preferences.create(preference)
         .then(response => {
             global.init_point = response.body.init_point;
-            res.render('confirm');
+            res.render('confirm',{init_point : init_point});
         }).catch(error => {
             console.log(error);
             res.send('error');
