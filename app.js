@@ -97,7 +97,7 @@ app.post('/buy', function (req, res) {
                 picture_url : 'https://store-e-commerce.herokuapp.com/assets/003.jpg',
                 title : req.body.title,
                 description: 'Dispositivo móvil de Tienda e-commerce',
-                unit_price: req.body.price,
+                unit_price: Number(req.body.price),
                 quantity: 1
             }
         ],
