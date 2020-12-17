@@ -3,7 +3,8 @@ var exphbs  = require('express-handlebars');
 var port = process.env.PORT || 3000
 var bodyParser = require('body-parser');
 var mercadopago = require('mercadopago');
-var host = 'https://store-e-commerce.herokuapp.com/';
+//var host = 'https://store-e-commerce.herokuapp.com/';
+const host = 'http://localhost:3000/';
 var url = host + 'callback?status=';
 
 mercadopago.configure({
